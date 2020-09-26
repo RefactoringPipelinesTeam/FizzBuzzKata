@@ -1,0 +1,31 @@
+﻿digraph G { node [style=filled, shape=rect]
+
+# Nodes
+"Int32 number" -> "UnitTest1.FizzConverter()" -> "String"
+{"String", "String 3"} -> "Join" -> "Tuple<String, String>"
+"Tuple<String, String>" -> "(a + b)" -> "String 1"
+{"String 1", "Int32 number"} -> "Join 1" -> "Tuple<String, Int32>"
+"Tuple<String, Int32>" -> "UnitTest1.DefaultPipe()" -> {"String 2", "Collector"}
+"Int32 number" -> "UnitTest1.BuzzConverter()" -> "String 3"
+
+
+# Formatting
+"Int32 number" [color=green]
+"String" [color="#9fbff4"]
+"UnitTest1.FizzConverter()" [shape=invhouse]
+"Tuple<String, String>" [color="#9fbff4"]
+"Join" [color=pink]
+"String 1" [label="String", color="#9fbff4"]
+"(a + b)" [shape=invhouse]
+"Tuple<String, Int32>" [color="#9fbff4"]
+"Join 1" [label="Join", color=pink]
+"String 2" [label="String", color="#9fbff4"]
+"UnitTest1.DefaultPipe()" [shape=invhouse]
+"Collector" [color = "#c361f4"]
+"String 3" [label="String", color="#9fbff4"]
+"UnitTest1.BuzzConverter()" [shape=invhouse]
+
+{ rank=same; "UnitTest1.DefaultPipe()", "Collector"}
+
+
+}

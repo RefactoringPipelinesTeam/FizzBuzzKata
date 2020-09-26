@@ -1,0 +1,16 @@
+﻿digraph G { node [style=filled, shape=rect]
+
+# Nodes
+"Int32 number" -> "_.ToString()" -> {"String", "Collector"}
+
+
+# Formatting
+"Int32 number" [color=green]
+"String" [color="#9fbff4"]
+"_.ToString()" [shape=invhouse]
+"Collector" [color = "#c361f4"]
+
+{ rank=same; "_.ToString()", "Collector"}
+
+
+}

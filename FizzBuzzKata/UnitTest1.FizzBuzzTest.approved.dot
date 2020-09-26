@@ -1,0 +1,11 @@
+﻿digraph G { node [style=filled, shape=rect]
+
+# Nodes
+
+
+# Formatting
+"Int32 number" [color=green]
+
+
+
+}

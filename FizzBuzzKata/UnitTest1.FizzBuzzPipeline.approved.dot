@@ -1,0 +1,35 @@
+﻿digraph G { node [style=filled, shape=rect]
+
+# Nodes
+// "Int32 number" -> "UnitTest1.FizzConverter()" -> "String"
+// {"String", "String 3"} -> "(a + b)" -> "String 1"
+// {"String 1", "Int32 number"}  -> "UnitTest1.DefaultPipe()"
+//  "UnitTest1.DefaultPipe()" -> {"String 2", "Collector"}
+// "Int32 number" -> "UnitTest1.BuzzConverter()" -> "String 3"
+
+"Int32 number" -> "UnitTest1.FizzConverter()"
+"Int32 number" -> "UnitTest1.BuzzConverter()"
+"Int32 number" -> "UnitTest1.DefaultPipe()"
+{"UnitTest1.FizzConverter()", "UnitTest1.BuzzConverter()"} -> "(a + b)" [label = "String"]
+"(a + b)" -> "Select"  [label = "String"]
+"UnitTest1.DefaultPipe()" -> "Select"  [label = "String"]
+"Select"  -> "Collector"
+
+#"UnitTest1.FizzConverter()" -> "Join" [label="String"]
+
+
+# Formatting
+"Int32 number" [color=green]
+"UnitTest1.FizzConverter()" [shape=invhouse]
+// "Tuple<String, String>" [color="#9fbff4"]
+// "Join" [color=pink]
+"(a + b)" [shape=invhouse]
+// "Tuple<String, Int32>" [color="#9fbff4"]
+// "Join 1" [label="Join", color=pink]
+"UnitTest1.DefaultPipe()" [shape=invhouse]
+"Collector" [color = "#c361f4"]
+"UnitTest1.BuzzConverter()" [shape=invhouse]
+
+{ rank=same; "Select", "Collector"}
+
+}
