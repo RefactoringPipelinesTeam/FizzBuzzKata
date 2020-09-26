@@ -10,17 +10,9 @@ namespace FizzBuzzKata
         [TestMethod]
         public void FizzBuzzTest()
         {
-            var result = _.FizzBuzz(1);
+            var result = FizzBuzz.Convert(1);
             Assert.AreEqual(result, "1");
 
         }
-    }
-}
-
-static class _
-{
-    public static string FizzBuzz(int i)
-    {
-        return i.ToString();
     }
 }
