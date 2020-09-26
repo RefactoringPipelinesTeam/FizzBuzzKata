@@ -10,7 +10,6 @@ namespace FizzBuzzKata
         [TestMethod]
         public void FizzBuzzTest()
         {
-            // assert 1 =1 
             var result = _.FizzBuzz(1);
             Assert.AreEqual(result, "1");
 
